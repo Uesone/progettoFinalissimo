@@ -27,12 +27,12 @@ public class UtenteService implements UserDetailsService {
                 .orElseThrow(() -> new UsernameNotFoundException("Utente non trovato: " + username));
     }
 
-    public Utente salvaUtente(Utente utente) {
+    public void salvaUtente(Utente utente) {
         if (utenteRepository.existsByEmail(utente.getEmail())) {
             throw new BadRequestExceptions("L'email " + utente.getEmail() + " è già in uso!");
         }
         utente.setPassword(passwordEncoder.encode(utente.getPassword()));
-        return utenteRepository.save(utente);
+        utenteRepository.save(utente);
     }
 
     public Utente trovaPerEmail(String email) {
