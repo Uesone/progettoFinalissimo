@@ -2,6 +2,7 @@ package UmbertoAmoroso.progettoFinalissimo.controller;
 
 import UmbertoAmoroso.progettoFinalissimo.entities.Prenotazione;
 import UmbertoAmoroso.progettoFinalissimo.payloads.NewPrenotazioneDTO;
+import UmbertoAmoroso.progettoFinalissimo.services.PrenotazioneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
