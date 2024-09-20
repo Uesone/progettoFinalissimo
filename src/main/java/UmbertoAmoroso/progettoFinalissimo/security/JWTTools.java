@@ -37,13 +37,13 @@ public class JWTTools {
         }
     }
 
-    // Estrai lo username dal token
+    // Estrai l username dal token
     public String extractUsernameFromToken(String token) {
         return Jwts.parserBuilder()
                 .setSigningKey(Keys.hmacShaKeyFor(secret.getBytes()))
                 .build()
                 .parseClaimsJws(token)
                 .getBody()
-                .getSubject(); // Il subject è lo username
+                .getSubject(); // Il subject è l username
     }
 }
